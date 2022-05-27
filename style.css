@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --hue: 194;
+  --bg-color-light: hsla(var(--hue), 9%, 89%, 1);
+  --bg-color: hsl(var(--hue), 0%, 100%);
+  --primary-color: hsl(var(--hue), 6%, 21%);
+  --seconday-color: hsl(var(--hue), 97%, 31%);
+
+  --font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  background: var(--bg-color);
+  color: var(--primary-color);
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.timer {
+  display: flex;
+  width: clamp(20rem, 20rem + 15vw, 31.2rem);
+  height: 148px;
+  font-size: clamp(8rem, 8rem + 5vw, 12.6rem);
+  margin-bottom: 3rem;
+  
+}
+
+button { 
+  border: none;
+}
+
+.controls {
+  width: clamp(20rem, 20rem + 15vw, 31.2rem);
+  display: flex;
+  justify-content: space-between;
+}
+.controls button {
+  background: none;
+  width: 4.8rem;
+  height: 4.8rem;
+  cursor: pointer;
+  
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: clamp(10rem, 10rem + 5vw, 13.8rem) clamp(10rem, 10rem + 5vw, 13.8rem);
+  gap: 3rem;
+}
+
+.cards button svg path {
+  fill: var(--primary-color)
+}
+
+.cards button {
+  width: clamp(10rem, 10rem + 5vw, 13.8rem);
+  height: clamp(12rem, 12rem + 5vw, 15.2rem);
+  border-radius: 24px;
+  background-color: var(--bg-color-light);
+  cursor: pointer;
+}
+
+.active svg path {
+  fill: var(--bg-color)!important;
+}
+
+.active {
+  background-color: var(--seconday-color)!important;
+}
+
+@media (max-width: 730px) {
+  main {
+    margin-top: 3rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .controls {
+    margin-bottom: 3rem;
+  }
+
+}
