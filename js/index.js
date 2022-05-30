@@ -21,7 +21,7 @@ const controls = Controls({
 const timer = Timer({
   minutesDisplay,
   secondsDisplay,
-  resetControls: Controls.resetControls
+  resetControls: controls.resetControls
 })
 
 const sound = Sound()
