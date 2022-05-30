@@ -144,6 +144,7 @@ buttonStop.addEventListener('click', function () {
 })
 
 buttonSet.addEventListener('click', function () {
+  pressButton()
   let newMinutes = getMinutes()
   if (!newMinutes) {
     resetTimer()
@@ -151,21 +152,24 @@ buttonSet.addEventListener('click', function () {
   }
   minutes = newMinutes
   updateDisplay(newMinutes, 0)
+
 })
 
-buttonAddition.addEventListener('click', function () {
+buttonAddition.addEventListener('click', function addition() {
   minutes = Number(minutesDisplay.textContent)
   minutesDisplay.textContent = String(minutes + 5).padStart(2, '0')
-  if (minutes <= 0) {
-    updateDisplay(0, 0)
+  if (minutes < 0) {
+  
+  updateDisplay(0, 0)
   }
   pressButton()
+  
 })
 
 buttonDecrease.addEventListener('click', function () {
   minutes = Number(minutesDisplay.textContent)
   minutesDisplay.textContent = String(minutes - 5).padStart(2, '0')
-  if (minutes <= 0) {
+  if (minutes <= 4) {
     minutes = 0
     updateDisplay(0, 0)
   }
